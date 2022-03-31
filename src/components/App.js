@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
+import youtube from "../youtube";
 
 const App = () => {
-  const [term, setTerm] = useState("");
-
-  const onFormSubmit = (e) => {
-    e.preventDefault();
-    setTerm(term);
+  const onFormSubmit = async (term) => {
+    const results = await youtube.get("/search", { params: { q: term } });
   };
 
   return (
