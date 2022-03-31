@@ -1,9 +1,9 @@
 import React from "react";
 
-const SearchBar = () => {
+const SearchBar = ({ onFormSubmit }) => {
   return (
     <div className='ui segment'>
-      <form className='ui form'>
+      <form className='ui form' onSubmit={onFormSubmit}>
         <div>
           <input type='text' placeholder='Search Youtube Videos'></input>
         </div>
