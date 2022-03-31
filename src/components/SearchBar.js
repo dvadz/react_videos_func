@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 
-const SearchBar = ({ onFormSubmit }) => {
+const SearchBar = (props) => {
   const [term, setTerm] = useState("");
 
   const onInputChange = (e) => {
     setTerm(e.target.value);
   };
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    props.onFormSubmit(term);
+  };
+
   return (
     <div className='ui segment'>
       <form className='ui form' onSubmit={onFormSubmit}>
