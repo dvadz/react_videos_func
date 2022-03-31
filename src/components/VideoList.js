@@ -13,7 +13,7 @@ const VideoList = ({ videos }) => {
     setRenderedVideos(renderedVideos);
   }, [videos]);
 
-  return <div>{renderedVideos}</div>;
+  return <div className='ui divided list'>{renderedVideos}</div>;
 };
 
 export default VideoList;
