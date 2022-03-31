@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import youtube from "../youtube";
 import VideoList from "./VideoList";
+import VideoPlayer from "./VideoPlayer";
 
 const App = () => {
   const [videos, setVideos] = useState("");
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <div className='ui container'>
       <SearchBar onFormSubmit={onFormSubmit} />
+      <VideoPlayer video={selectedVideo} />
       <VideoList videos={videos} onVideoDetailSelect={onVideoDetailSelect} />
     </div>
   );
