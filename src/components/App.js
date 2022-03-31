@@ -13,10 +13,14 @@ const App = () => {
     setSelectedVideo(results.data.items[0]);
   };
 
+  const onVideoDetailSelect = (video) => {
+    setSelectedVideo(video);
+  };
+
   return (
     <div className='ui container'>
       <SearchBar onFormSubmit={onFormSubmit} />
-      <VideoList videos={videos} />
+      <VideoList videos={videos} onVideoDetailSelect={onVideoDetailSelect} />
     </div>
   );
 };

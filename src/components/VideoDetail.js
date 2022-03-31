@@ -1,9 +1,9 @@
 import React from "react";
 
-const VideoDetail = ({ video }) => {
+const VideoDetail = ({ video, onVideoDetailSelect }) => {
   const onVideoDetailClick = (event) => {
     event.preventDefault();
-    console.log("Click", video);
+    onVideoDetailSelect(video);
   };
 
   return (
