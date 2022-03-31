@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import VideoDetail from "./VideoDetail";
 
 const VideoList = ({ videos }) => {
   const [renderedVideos, setRenderedVideos] = useState([]);
@@ -7,11 +8,7 @@ const VideoList = ({ videos }) => {
     if (!videos) return;
 
     const renderedVideos = videos.map((video) => {
-      return (
-        <div className='item' key={video.id.videoId}>
-          <div className='title'>{video.snippet.title}</div>
-        </div>
-      );
+      return <VideoDetail video={video} />;
     });
     setRenderedVideos(renderedVideos);
   }, [videos]);
